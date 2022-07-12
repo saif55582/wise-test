@@ -1,4 +1,4 @@
-import { IAnswerBook, IAttemptedTests } from './test';
+import { IAttemptedTests } from './test';
 
 export interface IStudent {
   id?: string;

@@ -1,0 +1,267 @@
+{
+	"info": {
+		"_postman_id": "0635c45c-755b-4fa7-8dfb-c543de679e5c",
+		"name": "Wise App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Teacher",
+			"item": [
+				{
+					"name": "Create a question",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"category\": \"linux\",\n    \"question\": \"How to delete a directory in linux?\",\n    \"description\": \"delete folder\",\n    \"explanation\": \"select command to deleta a folder/directory in linux.\",\n    \"resources\": [\"resource_1\", \"resource_2\"],\n    \"multiple_correct_answers\": false,\n    \"answers\": {\n        \"choices\": {\n            \"a\": \"ls\",\n            \"b\": \"delete\",\n            \"c\": \"rmdir\",\n            \"d\": \"remove\"\n        },\n        \"correct_choices\": {\n            \"a\": false,\n            \"b\": false,\n            \"c\": true,\n            \"d\": false\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/teachers/questions",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"teachers",
+								"questions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Question",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/teachers/questions",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"teachers",
+								"questions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a test",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Test 2\",\n    \"start_time\": 1657533009611,\n    \"duration_mins\": 30,\n    \"no_of_ques\": 2,\n    \"questions\": [\"iAMEAmxpaLrxT5cPZV5j6Z\", \"mE2FmH85yVtkz73gA31fSi\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/teachers/tests",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"teachers",
+								"tests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List tests",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/teachers/tests",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"teachers",
+								"tests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assign test to students",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"testId\": \"ceTNcuVTyNnvQeapEQbnGn\",\n    \"studentIds\": [\"aDbARUNTGAvosu9up7bP3D\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/teachers/tests/assign",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"teachers",
+								"tests",
+								"assign"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "Create a student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Ali\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/students",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List students",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/students",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List assigned tests",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/students/aDbARUNTGAvosu9up7bP3D/tests",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"students",
+								"aDbARUNTGAvosu9up7bP3D",
+								"tests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Start a test",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"testId\": \"sqMA2YoK9VrCPqPkc7DMun\",\n    \"action\": \"start\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/students/aDbARUNTGAvosu9up7bP3D/tests/action",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"students",
+								"aDbARUNTGAvosu9up7bP3D",
+								"tests",
+								"action"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "End a test",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"testId\": \"sqMA2YoK9VrCPqPkc7DMun\",\n    \"action\": \"end\",\n    \"answer_book\": {\n        \"4LFidtJjVR3FR9qaZzvKXk\": {\n            \"a\": true,\n            \"b\": false,\n            \"c\": false,\n            \"d\": false\n        },\n        \"5BsZ2VjyPdsRjLG9muCYvN\": {\n            \"a\": true,\n            \"b\": false,\n            \"c\": false,\n            \"d\": false\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/students/aDbARUNTGAvosu9up7bP3D/tests/action",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"students",
+								"aDbARUNTGAvosu9up7bP3D",
+								"tests",
+								"action"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
